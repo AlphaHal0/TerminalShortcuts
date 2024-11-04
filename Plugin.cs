@@ -1,51 +1,27 @@
 ﻿using BepInEx;
-using JetBrains.Annotations;
-using LethalOS.API;
-using LethalOS.API.Terminal;
-using System.Reflection;
+using BepInEx.Logging;
 using TerminalApi;
 using TerminalApi.Classes;
 using static TerminalApi.Events.Events;
 using static TerminalApi.TerminalApi;
 
-namespace TestPlugin {
+namespace TerminalShortcuts {
     [BepInPlugin(modGUID, modName, modVersion)]
     [BepInDependency("atomic.terminalapi")]
+    [BepInDependency("verity.lethalos.api")]
 
-
+    // https://thunderstore.io/c/lethal-company/p/Verity/LethalOS/v/1.0.7/
+    // https://github.com/VerityIncorporated/LethalOS/issues/3
     public class Plugin : BaseUnityPlugin {
 
         private const string modGUID = "frog.terminalshortcuts";
         private const string modName = "Terminal Shortcuts Mod";
         private const string modVersion = "1.0.0";
 
+        public static ManualLogSource LogSource { get; set; } = null!;
+
         private void Awake() {
             Logger.LogInfo("Plugin Test Plugin is loaded!");
-
-
-            Menu testMenu = new Menu("Test Menu", "Description", "main", "FFW");
-
-            Category henryCategory = new Category("Henry", "Henry-related modules", "henry");
-            testMenu.AddCategory(henryCategory);
-
-            testMenu.Finished();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
             TerminalAwake += TerminalIsAwake;
@@ -158,4 +134,9 @@ namespace TestPlugin {
         }
 
     }
+
 }
+}
+
+
+
