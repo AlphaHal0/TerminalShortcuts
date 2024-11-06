@@ -33,7 +33,7 @@ namespace TerminalShortcuts {
             TerminalBeganUsing += BeganUsing;
             TerminalExited += OnTerminalExit;
             TerminalTextChanged += OnTerminalTextChanged;
-            // meow!  
+            // meow!  UwU >w<   
 
 
             // Will display 'Sorry but you cannot run kill' when 'run kill' is typed into the terminal
@@ -55,7 +55,6 @@ namespace TerminalShortcuts {
             AddTerminalKeyword(nounKeyword, new() {
                 TriggerNode = triggerNode,
                 DisplayTextSupplier = () => {
-                    Logger.LogWarning("Put code here, and it will run when trigger node is loaded");
                     return "This text will display";
                 },
                 Category = "Other",
@@ -66,8 +65,80 @@ namespace TerminalShortcuts {
             // Adds a new command/terminal keyword that is 'pop' and a callback function that will run when the node of the keyword is loaded
             AddCommand("pop", new CommandInfo() {
                 DisplayTextSupplier = () => {
-                    Logger.LogWarning("Wowow, this ran.");
                     return "popped\n\n";
+                },
+                Category = "Other"
+            });
+
+            AddCommand("shortcuts", new CommandInfo() {
+                DisplayTextSupplier = () => {
+                    return """
+                    Loot:
+                    `$344` - There is $344 worth of loot left.
+                    `7 ITM` - There are 7 items left in the facility
+
+                    Time:
+                    `3 PM` - It is 3 PM
+
+                    -----------------------------
+
+                    Monsters:
+                    `BRAK` = Bracken
+                    `JEST` = Jester
+                    `GIAN` = Forest Giant
+                    `COIL` = Coil Head
+                    `SNAR` = Snare Flea
+                    `MANR` = Maneater
+                    `BTLR` = Butler
+
+                    `BARB` = Barber (clay surgeon) 
+                    `SPID` = Bunker Spider
+                    `BUG` = Hoarding Bug
+                    `SLIM` = Hygrodere (slime/blob)
+                    `MASK` = Masked
+                    `NUT` = Nutcracker
+                    `SPOR` = Spore lizard
+                    `THUM` = Thumper
+
+                    `WORM` = Earth Leviathan
+                    `HAWK` = Baboon Hawk (use if there is a large group that could pose a significant threat)
+                    `DOG` = Eyeless Dog
+                    `BIRD` = Old Bird
+
+
+                    -----------------------------
+
+                    Location Code:
+                    `MAIN` = Main exit
+                    `FIRE` = Fire exit
+                    `HALL` = Other generic hallway
+                    `SHIP` = Ship
+
+                    -----------------------------
+
+                    Player Codes:
+                    SCIE = scienceboy
+                    ASTN = aston
+                    FROG = hugo
+                    ALFI = alfie
+                    MORG = morgan
+                    LDAN = little dan
+                    FDAN = fat dan
+                    IRON = iron
+
+                    -----------------------------
+
+                    If someone has ghost girl we run the following:
+                    `{PLAYERNAME} GIRL`
+
+                    Death Protocol:
+                    `{Player Code} DEAD`
+
+                    Possession Protocol (Masked Conversion):
+                    `{Player Code} MASK`
+
+                    `UNK` or `?` = unidentified entity or other threat
+                    """;
                 },
                 Category = "Other"
             });
@@ -81,7 +152,6 @@ namespace TerminalShortcuts {
         }
 
         private string CommandFunction() {
-            Logger.LogWarning("Code put here will run when terminal command is sent.");
             return "Wait, you cannot push\n\n";
         }
 
@@ -94,6 +164,11 @@ namespace TerminalShortcuts {
             // If user types in fuck it will changed to frick before they can even submit
             if (userInput == "fuck") {
                 SetTerminalInput("frick");
+            }
+
+            if (userInput == "tm")
+            {
+                SetTerminalInput("transmit ");
             }
 
         }
@@ -135,7 +210,6 @@ namespace TerminalShortcuts {
 
     }
 
-}
 }
 
 

@@ -44,7 +44,7 @@
       <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Lethal Company\BepInEx\core\BepInEx.dll</HintPath>
     </Reference>
     <Reference Include="LethalOS.API">
-      <HintPath>..\..\..\Libraries\Verity-LethalOS-1.0.8\LethalOS.API.dll</HintPath>
+      <HintPath>..\..\..\..\..\Libraries\Unity\Verity-LethalOS-1.0.8\LethalOS.API.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -55,7 +55,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="TerminalApi">
-      <HintPath>..\..\..\Libraries\NotAtomicBomb-TerminalApi-1.5.5\BepInEx\plugins\TerminalApi.dll</HintPath>
+      <HintPath>..\..\..\..\..\Libraries\Unity\NotAtomicBomb-TerminalApi-1.5.5\BepInEx\plugins\TerminalApi.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Lethal Company\Lethal Company_Data\Managed\UnityEngine.dll</HintPath>
